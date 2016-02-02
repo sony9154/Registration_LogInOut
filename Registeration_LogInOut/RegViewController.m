@@ -14,25 +14,25 @@
 
 @property (weak, nonatomic) IBOutlet UITextField * addPwdField;
 
-@property (nonatomic,strong) NSMutableArray * mutableNewUser;
+@property (nonatomic,strong) NSMutableArray * mutableNewUsers;
 
 @end
 
 @implementation RegViewController
 - (IBAction)registerButton:(id)sender {
     NSString * newUser = self.addAccountField.text;
-    [_mutableNewUser addObject:newUser];
-    for (newUser in _mutableNewUser) {
+    [_mutableNewUsers addObject:newUser];
+    for (NSString * newUser in _mutableNewUsers) {
         NSLog(@"%@",newUser);
     }
-    NSLog(@"%li",_mutableNewUser.count);
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"%li",_mutableNewUsers.count);
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _mutableNewUser = [[NSMutableArray alloc]init];
+    _mutableNewUsers = [[NSMutableArray alloc]init];
     
 }
 

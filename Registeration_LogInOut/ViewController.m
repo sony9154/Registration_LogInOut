@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SuccessViewController.h"
+
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -17,6 +19,11 @@
 @implementation ViewController
 
 - (IBAction)validateAccount:(id)sender {
+    NSString * username = self.usernameField.text;
+    NSString * password = self.passwordField.text;
+    if ([username isEqualToString:@"%@",]) {
+        NSLog(@"登入成功");
+    }
 }
 
 - (void)viewDidLoad {

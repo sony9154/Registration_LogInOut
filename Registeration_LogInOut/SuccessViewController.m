@@ -9,6 +9,7 @@
 #import "SuccessViewController.h"
 
 @interface SuccessViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *helloMessage;
 
 @end
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _helloMessage.text = [NSString stringWithFormat:@"%@,您好", _successName];
+    
 }
 
 - (void)didReceiveMemoryWarning {

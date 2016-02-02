@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SuccessViewController : UIViewController
+@property (strong, nonatomic)NSString * successName; 
 
 @end
