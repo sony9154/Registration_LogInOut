@@ -10,19 +10,30 @@
 
 @interface RegViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *addAccountField;
+@property (weak, nonatomic) IBOutlet UITextField * addAccountField;
 
-@property (weak, nonatomic) IBOutlet UITextField *addPwdField;
+@property (weak, nonatomic) IBOutlet UITextField * addPwdField;
+
+@property (nonatomic,strong) NSMutableArray * mutableNewUser;
 
 @end
 
 @implementation RegViewController
 - (IBAction)registerButton:(id)sender {
+    NSString * newUser = self.addAccountField.text;
+    [_mutableNewUser addObject:newUser];
+    for (newUser in _mutableNewUser) {
+        NSLog(@"%@",newUser);
+    }
+    NSLog(@"%li",_mutableNewUser.count);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _mutableNewUser = [[NSMutableArray alloc]init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
