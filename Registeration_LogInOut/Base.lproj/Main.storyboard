@@ -31,13 +31,16 @@
                                 <rect key="frame" x="45" y="462" width="66" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="登入"/>
+                                <connections>
+                                    <action selector="validateAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rz7-Fb-dbM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9w-I3-pA2">
                                 <rect key="frame" x="208" y="462" width="64" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="註冊"/>
                                 <connections>
-                                    <action selector="validateAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ugd-qD-Gar"/>
+                                    <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jd0-qh-GF8"/>
                                     <segue destination="3oW-dD-irJ" kind="show" id="BDt-IT-NkC"/>
                                 </connections>
                             </button>
@@ -93,7 +96,7 @@
         <!--Reg View Controller-->
         <scene sceneID="abQ-dh-WT6">
             <objects>
-                <viewController id="3oW-dD-irJ" customClass="RegViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegViewController" id="3oW-dD-irJ" customClass="RegViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cce-kz-cGm"/>
                         <viewControllerLayoutGuide type="bottom" id="yhA-px-cqe"/>

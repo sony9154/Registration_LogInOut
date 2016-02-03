@@ -8,23 +8,32 @@
 
 #import "ViewController.h"
 #import "SuccessViewController.h"
-
+#import "RegViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField * usernameField;
+@property (weak, nonatomic) IBOutlet UITextField * passwordField;
 
 @end
 
 @implementation ViewController
 
+- (IBAction)registerAccount:(id)sender {
+    
+}
+
 - (IBAction)validateAccount:(id)sender {
     NSString * username = self.usernameField.text;
     NSString * password = self.passwordField.text;
-    if ([username isEqualToString:@"%@",]) {
-        NSLog(@"登入成功");
-    }
+    self.regMutableArray.count;
+    
+    self.usernameField.text = _regString;
+    NSLog(@" Here is VC1,%@ ", self.regString);
+    //if ([username isEqualToString:@"%@",]) {
+    //  NSLog(@"登入成功");
+    //}
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

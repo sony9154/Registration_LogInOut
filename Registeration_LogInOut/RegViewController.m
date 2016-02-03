@@ -7,6 +7,7 @@
 //
 
 #import "RegViewController.h"
+#import "ViewController.h"
 
 @interface RegViewController ()
 
@@ -26,7 +27,12 @@
         NSLog(@"%@",newUser);
     }
     NSLog(@"%li",_mutableNewUsers.count);
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    ViewController * vc1 = [[ViewController alloc]init];//老師用self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"
+    vc1.regMutableArray = _mutableNewUsers; //不確定有沒有問題(RgVC的NSMutableArray傳給VC1的NSMutableArray去接.
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
