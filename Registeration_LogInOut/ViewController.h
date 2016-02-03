@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController;
 
-@property (strong, nonatomic) NSMutableArray * regMutableArray;
-@property (strong, nonatomic) NSString * regString;
+@property NSMutableArray * vcUsersArray;
+@property NSMutableArray * vcPwdArray;
 
 @end
+
 

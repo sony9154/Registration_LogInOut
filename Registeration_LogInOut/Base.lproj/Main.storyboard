@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,12 +36,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9w-I3-pA2">
-                                <rect key="frame" x="208" y="462" width="64" height="53"/>
+                                <rect key="frame" x="186" y="462" width="109" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="註冊"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jd0-qh-GF8"/>
-                                    <segue destination="3oW-dD-irJ" kind="show" id="BDt-IT-NkC"/>
+                                    <segue destination="3oW-dD-irJ" kind="show" identifier="seguetoReg" id="BDt-IT-NkC"/>
                                 </connections>
                             </button>
                         </subviews>

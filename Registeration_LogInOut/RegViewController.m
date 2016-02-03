@@ -15,22 +15,14 @@
 
 @property (weak, nonatomic) IBOutlet UITextField * addPwdField;
 
-@property (nonatomic,strong) NSMutableArray * mutableNewUsers;
-
 @end
 
 @implementation RegViewController
 - (IBAction)registerButton:(id)sender {
     NSString * newUser = self.addAccountField.text;
-    [_mutableNewUsers addObject:newUser];
-    for (NSString * newUser in _mutableNewUsers) {
-        NSLog(@"%@",newUser);
-    }
-    NSLog(@"%li",_mutableNewUsers.count);
-    
-    
-    ViewController * vc1 = [[ViewController alloc]init];//老師用self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"
-    vc1.regMutableArray = _mutableNewUsers; //不確定有沒有問題(RgVC的NSMutableArray傳給VC1的NSMutableArray去接.
+    NSString * newPwd = self.addPwdField.text;
+    [self.regNewUsers addObject:newUser];
+    [self.regNewPwd addObject:newPwd];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -38,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _mutableNewUsers = [[NSMutableArray alloc]init];
     
 }
 
