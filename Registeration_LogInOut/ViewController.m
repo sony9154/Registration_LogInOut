@@ -22,21 +22,18 @@
 }
 
 - (IBAction)validateAccount:(id)sender {
-    NSString * username = self.usernameField.text;
-    NSString * password = self.passwordField.text;
-    for (NSString * user in self.vcUsersArray) {
-        if ([username isEqualToString:user]) {
-          NSUInteger index = [self.vcUsersArray indexOfObject:user];
-            for (NSString * user in self.vcPwdArray) {
-                NSString * pwdObject = [self.vcPwdArray objectAtIndex:index];
-                if([password isEqualToString: pwdObject]){
-                    NSLog(@"登入成功");//判斷邏輯有誤
-                }
-            }
-        }
-        
+    NSString * username = _usernameField.text;
+    NSString * password = _passwordField.text;
+
+    if ([_vcUsersArray containsObject:username] && [_vcPwdArray containsObject:password] && ([_vcPwdArray indexOfObject:password]==[_vcUsersArray indexOfObject:username])  ) {
+        NSLog(@"登入成功");
+        [self performSegueWithIdentifier:@"LoginSuccess" sender:nil];
+    } else {
+        UIAlertController * alertcontroller = [UIAlertController alertControllerWithTitle:@"登入失敗" message:@"帳號密碼錯誤" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * understand = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:nil];
+        [alertcontroller addAction:understand];
+        [self presentViewController:alertcontroller animated:YES completion:nil];
     }
-    
 }
 
 
@@ -44,20 +41,20 @@
 {
     if ([segue.identifier isEqualToString:@"LoginSuccess"]) {
         SuccessViewController * sVC = segue.destinationViewController;
-        sVC.successName = self.usernameField.text;
+        sVC.successName = _usernameField.text;
     }else if
         ([segue.identifier isEqualToString:@"seguetoReg"]){
             RegViewController * regVC = segue.destinationViewController;
-            regVC.regNewUsers = self.vcUsersArray;
-            regVC.regNewPwd = self.vcPwdArray;
+            regVC.regNewUsers = _vcUsersArray;
+            regVC.regNewPwd = _vcPwdArray;
         }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.vcUsersArray = [[NSMutableArray alloc]init];
-    self.vcPwdArray = [[NSMutableArray alloc]init];
+    _vcUsersArray = [[NSMutableArray alloc]init];
+    _vcPwdArray = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {

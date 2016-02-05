@@ -9,7 +9,6 @@
 #import "SuccessViewController.h"
 
 @interface SuccessViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *helloMessage;
 
 @end
 
@@ -20,6 +19,9 @@
     // Do any additional setup after loading the view.
     _helloMessage.text = [NSString stringWithFormat:@"%@,您好", _successName];
     
+}
+- (IBAction)LogoutButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

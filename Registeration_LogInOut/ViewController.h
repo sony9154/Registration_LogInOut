@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RegViewController.h"
 
-@interface ViewController : UIViewController;
+@interface ViewController : UIViewController
 
 @property NSMutableArray * vcUsersArray;
 @property NSMutableArray * vcPwdArray;

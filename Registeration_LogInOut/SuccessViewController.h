@@ -11,5 +11,7 @@
 @interface SuccessViewController : UIViewController
 
 @property (strong, nonatomic)NSString * successName;
+@property (weak, nonatomic) IBOutlet UILabel *helloMessage;
+
 
 @end
