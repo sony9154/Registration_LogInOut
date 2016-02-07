@@ -25,7 +25,7 @@
     NSString * username = _usernameField.text;
     NSString * password = _passwordField.text;
 
-    if ([_vcUsersArray containsObject:username] && [_vcPwdArray containsObject:password] && ([_vcPwdArray indexOfObject:password]==[_vcUsersArray indexOfObject:username])  ) {
+    if (/*用dictionary這裡的判斷真的不知道要怎麼寫*/) {
         NSLog(@"登入成功");
         [self performSegueWithIdentifier:@"LoginSuccess" sender:nil];
     } else {
@@ -45,16 +45,18 @@
     }else if
         ([segue.identifier isEqualToString:@"seguetoReg"]){
             RegViewController * regVC = segue.destinationViewController;
-            regVC.regNewUsers = _vcUsersArray;
-            regVC.regNewPwd = _vcPwdArray;
+            //regVC.regNewUsers = _vcUsersArray;
+            //regVC.regNewPwd = _vcPwdArray;
+            regVC.regUserInfos = self.userInfos;
         }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _vcUsersArray = [[NSMutableArray alloc]init];
-    _vcPwdArray = [[NSMutableArray alloc]init];
+    //_vcUsersArray = [[NSMutableArray alloc]init];
+    //_vcPwdArray = [[NSMutableArray alloc]init];
+    self.userInfos = [[NSMutableDictionary alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
