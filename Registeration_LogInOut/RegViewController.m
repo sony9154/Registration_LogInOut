@@ -21,10 +21,8 @@
 - (IBAction)registerButton:(id)sender {
     NSString * newUser = self.addAccountField.text;
     NSString * newPwd = self.addPwdField.text;
-    //[self.regNewUsers addObject:newUser];
-    //[self.regNewPwd addObject:newPwd];
-    [self.regUserInfos setObject:newUser forKey:newPwd];
-    if ( [newUser length]==0 || [newPwd length]==0 ) { //if(!newUser || !newPwd)空值時會直接執行dismiss
+    [self.regUserInfos setObject:newPwd forKey:newUser];
+    if ( [newUser length]==0 || [newPwd length]==0 ) {
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"註冊失敗" message:@"帳號密碼不能為空" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * understand = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:understand];

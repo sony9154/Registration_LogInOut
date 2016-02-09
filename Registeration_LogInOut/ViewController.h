@@ -11,9 +11,6 @@
 
 @interface ViewController : UIViewController
 
-//@property NSMutableArray * vcUsersArray;
-//@property NSMutableArray * vcPwdArray;
-
 @property (nonatomic) NSMutableDictionary * userInfos;
 
 @end

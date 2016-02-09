@@ -10,9 +10,6 @@
 
 @interface RegViewController : UIViewController
 
-//@property NSMutableArray * regNewUsers;
-//@property NSMutableArray * regNewPwd;
-
 @property (nonatomic) NSMutableDictionary * regUserInfos;
 
 @end
