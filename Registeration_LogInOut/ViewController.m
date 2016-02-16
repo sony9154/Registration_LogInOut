@@ -24,7 +24,7 @@
 - (IBAction)validateAccount:(id)sender {
     NSString * userName = _usernameField.text;
     NSString * password = _passwordField.text;
-    //if ([self.userInfos[username] isEqualToString:password])
+
     if ([[self.userInfos objectForKey:userName] isEqualToString:password]) {
         NSLog(@"登入成功");
         [self performSegueWithIdentifier:@"LoginSuccess" sender:nil];
@@ -59,6 +59,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)backgroundTap:(id)sender{
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
+
+
 
 //-(IBAction)backToViewContriller:(UIStoryboardSegue *) segue {
 //    NSLog(@"back to FirstPage");

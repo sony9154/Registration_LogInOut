@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -27,17 +27,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-wG-QwT">
-                                <rect key="frame" x="70" y="352" width="60" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="登入"/>
-                                <connections>
-                                    <action selector="validateAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rz7-Fb-dbM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9w-I3-pA2">
-                                <rect key="frame" x="200" y="352" width="120" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9w-I3-pA2">
+                                <rect key="frame" x="410" y="352" width="120" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="進入註冊"/>
                                 <connections>
                                     <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jd0-qh-GF8"/>
@@ -50,20 +42,31 @@
                                     <constraint firstAttribute="width" constant="100" id="q4I-NY-BPL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-wG-QwT">
+                                <rect key="frame" x="70" y="352" width="60" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="登入"/>
+                                <connections>
+                                    <action selector="validateAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rz7-Fb-dbM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.55734042922154847" blue="0.54885551790657727" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6qu-yv-XMv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="3Wn-dL-9K2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l9w-I3-pA2" secondAttribute="bottom" constant="200" id="44e-eG-d2D"/>
                             <constraint firstItem="w5r-wG-QwT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="GIs-lw-wPd"/>
-                            <constraint firstItem="l9w-I3-pA2" firstAttribute="leading" secondItem="w5r-wG-QwT" secondAttribute="trailing" constant="70" id="S8Q-pP-Qzb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w5r-wG-QwT" secondAttribute="bottom" constant="200" id="bVY-9r-4nU"/>
                             <constraint firstItem="zFL-gM-OVb" firstAttribute="top" secondItem="6qu-yv-XMv" secondAttribute="bottom" constant="40" id="dkE-4G-EgQ"/>
                             <constraint firstItem="zFL-gM-OVb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kCu-rW-nr5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l9w-I3-pA2" secondAttribute="trailing" constant="50" id="oCp-zR-epC"/>
                             <constraint firstItem="6qu-yv-XMv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zVA-Xt-sPx"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTap:" destination="BYZ-38-t0r" eventType="touchDown" id="Qbg-42-YGo"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="zFL-gM-OVb" id="vfD-Sa-PaZ"/>
@@ -125,7 +128,7 @@
                         <viewControllerLayoutGuide type="top" id="Cce-kz-cGm"/>
                         <viewControllerLayoutGuide type="bottom" id="yhA-px-cqe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Hht-nT-8Mw">
+                    <view key="view" contentMode="scaleToFill" id="Hht-nT-8Mw" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -145,8 +148,9 @@
                                     <constraint firstAttribute="width" constant="50" id="ylY-wv-2ac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <size key="titleShadowOffset" width="5" height="5"/>
                                 <state key="normal" title="註冊">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="3oW-dD-irJ" eventType="touchUpInside" id="geM-pg-WK2"/>
@@ -158,7 +162,7 @@
                                     <constraint firstAttribute="width" constant="100" id="wJd-az-7PX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.15579551057053598" green="0.79837572628216769" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,6 +174,9 @@
                             <constraint firstItem="w3u-wY-mXe" firstAttribute="top" secondItem="VG0-QJ-S0j" secondAttribute="bottom" constant="50" id="fpY-r0-Trc"/>
                             <constraint firstItem="VG0-QJ-S0j" firstAttribute="top" secondItem="Cce-kz-cGm" secondAttribute="bottom" constant="100" id="sXF-fl-jW4"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTap:" destination="3oW-dD-irJ" eventType="touchDown" id="YXn-lB-Pxr"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="addAccountField" destination="VG0-QJ-S0j" id="1kt-Wn-w8j"/>
